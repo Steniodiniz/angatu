@@ -4,383 +4,403 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Angatu · Sessão 02 | Infográfico Estratégico FAPDF</title>
-    <!-- Tailwind CSS + Plus Jakarta Sans -->
+    <!-- Tailwind CSS + Plus Jakarta Sans via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN -->
+    <!-- Chart.js v4 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <!-- Configuração customizada da fonte -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-            background: #f8fafc;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: #f1f5f9;
             scroll-behavior: smooth;
         }
-        /* custom scroll e estilos de tooltip */
-        .chart-tooltip-custom {
-            background: #0f172a;
-            border-radius: 12px;
-            padding: 8px 12px;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 500;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
-        }
-        .gradient-mask {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        .custom-tooltip {
+            background: #0f172a !important;
+            border-radius: 12px !important;
+            padding: 8px 12px !important;
+            color: white !important;
+            font-size: 0.75rem !important;
+            font-weight: 500 !important;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
         .card-hover {
             transition: all 0.2s ease;
         }
         .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.2);
         }
-        .timeline-dot {
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.2);
+        .gradient-bg-dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
         .unicode-arrow {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 300;
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- HEADER HERO -->
-    <section class="gradient-mask text-white pt-12 pb-20 px-6 border-b border-blue-900/30">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+    <!-- HEADER com linha do tempo, badges TRL e risco -->
+    <header class="gradient-bg-dark text-white pt-10 pb-16 px-6 border-b border-blue-800/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-5 mb-8">
                 <div>
-                    <span class="text-blue-300 tracking-wider text-sm font-semibold uppercase bg-white/10 px-3 py-1 rounded-full">Relatório de Orquestração CEO</span>
-                    <h1 class="text-4xl md:text-6xl font-bold mt-4 tracking-tight">Angatu · Sessão 02</h1>
-                    <p class="text-blue-200 text-lg mt-3 max-w-2xl">Análise comparativa crítica · viabilidade comercial e metas Edital FAPDF</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-blue-500/20 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">Edital FAPDF</span>
+                        <span class="bg-emerald-500/20 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">TRL 6 · Estruturada</span>
+                        <span class="bg-red-500/20 text-red-200 text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm">Risco Alto (Execução)</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Angatu Saúde</h1>
+                    <p class="text-blue-200 text-lg max-w-2xl mt-2">Análise comparativa crítica · Sessão 02 · Viabilidade comercial e metas</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-3 text-right border border-white/20">
-                    <div class="text-xs text-blue-200 uppercase tracking-wide">Datas</div>
-                    <div class="font-mono text-sm font-semibold">S01: 05 Abr 2026</div>
-                    <div class="font-mono text-sm font-semibold">S02: 22 Abr 2026</div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl px-5 py-3 text-right border border-white/20 min-w-[180px]">
+                    <div class="text-xs text-blue-200 uppercase tracking-wide">Linha do tempo</div>
+                    <div class="font-mono text-sm font-semibold">Sessão 01: 05 Abr 2026</div>
+                    <div class="font-mono text-sm font-semibold text-blue-300">Sessão 02: 22 Abr 2026</div>
                 </div>
             </div>
-            <!-- KPI resumo -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8">
+            <!-- mini KPIs -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
                 <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <div class="text-blue-300 text-sm">Maturidade Tecnológica</div>
                     <div class="text-2xl font-bold">TRL 5 → <span class="text-green-400">TRL 6</span></div>
-                    <div class="text-xs text-blue-200 mt-1">Estruturação técnica + FHIR/HL7</div>
+                    <div class="text-xs text-blue-200">FHIR/HL7 estruturado</div>
                 </div>
                 <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <div class="text-blue-300 text-sm">Gestão / Governança</div>
-                    <div class="text-2xl font-bold">Confusa → <span class="text-green-400">Coordenada c/ CTO</span></div>
-                    <div class="text-xs text-blue-200 mt-1">Integração Braulio • pragmatismo</div>
+                    <div class="text-2xl font-bold">Confusa → <span class="text-green-400">Coordenada com CTO</span></div>
+                    <div class="text-xs text-blue-200">Integração Braulio</div>
                 </div>
                 <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
                     <div class="text-blue-300 text-sm">Execução Comercial</div>
-                    <div class="text-2xl font-bold text-amber-300">Definido, mas sem receita</div>
-                    <div class="text-xs text-blue-200 mt-1">ICP Clínicas • Zero clientes pagantes</div>
+                    <div class="text-2xl font-bold text-amber-300">Definido, mas ZERO clientes</div>
+                    <div class="text-xs text-blue-200">ICP Clínicas · sem receita</div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- CONTEÚDO PRINCIPAL scrollytelling + cards estratégicos -->
-    <main class="max-w-6xl mx-auto px-4 md:px-6 -mt-6 pb-20">
+    <main class="max-w-7xl mx-auto px-4 md:px-6 -mt-8 pb-20">
         
-        <!-- Temas Críticos e Evolução (cards comparativos) -->
-        <div class="grid md:grid-cols-3 gap-6 mb-16">
-            <div class="bg-white rounded-3xl shadow-xl p-6 border-l-8 border-blue-600 card-hover">
-                <h3 class="font-bold text-lg flex items-center gap-2">🧹 Saneamento Cap Table</h3>
-                <p class="text-gray-600 text-sm mt-2">Participação de 14% da <strong class="text-red-600">Raja Ventures</strong> = bloqueio Meta 5. “Uninvestable” sem renegociação.</p>
-                <div class="mt-4 text-xs font-mono bg-gray-100 p-2 rounded-xl">Status S02: reconhecimento crítico → ação jurídica necessária</div>
+        <!-- LINHA 1: GRÁFICOS (Evolução TRL + Alocação de recursos) -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-16">
+            <!-- Gráfico TRL comparativo S01 → S02 -->
+            <div class="bg-white rounded-3xl shadow-xl p-6 card-hover">
+                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">📈 Evolução TRL & Maturidade</h3>
+                <p class="text-sm text-gray-500 mb-4">Comparativo entre Sessão 01 e Sessão 02 (escala TRL 1-9)</p>
+                <canvas id="trlChart" width="400" height="300" style="max-width:100%; height:auto;"></canvas>
+                <div class="mt-3 text-center text-xs text-gray-500">↑ avanço de interoperabilidade (FHIR/HL7) mas produto final sem validação comercial</div>
             </div>
-            <div class="bg-white rounded-3xl shadow-xl p-6 border-l-8 border-indigo-500 card-hover">
-                <h3 class="font-bold text-lg flex items-center gap-2">🔄 Mudança TRL & Interoperabilidade</h3>
-                <p class="text-gray-600 text-sm mt-2">Saída da negação sobre bugs → estruturação FHIR/HL7. Salto intelectual mas sem evolução no produto “na prateleira”.</p>
-                <div class="mt-4 text-xs font-semibold text-indigo-700">Avanço arquitetural promissor</div>
-            </div>
-            <div class="bg-white rounded-3xl shadow-xl p-6 border-l-8 border-emerald-500 card-hover">
-                <h3 class="font-bold text-lg flex items-center gap-2">🏥 Abandono B2C → Foco Clínicas</h3>
-                <p class="text-gray-600 text-sm mt-2">Modelo B2B reduz CAC, porém exige Dashboard robusto (não pronto). Zero execução comercial ainda.</p>
-                <div class="mt-4 text-amber-600 text-xs font-medium">⚠️ Dashboard B2B em nível backend</div>
-            </div>
-        </div>
-
-        <!-- AGENTES (cards expansivos) 6 agentes -->
-        <div class="mb-20">
-            <h2 class="text-2xl font-bold text-slate-800 mb-2 flex items-center gap-2">🎯 Análise por Agentes Estratégicos</h2>
-            <div class="h-1 w-20 bg-blue-600 rounded-full mb-8"></div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Agente Produto -->
-                <div class="bg-white shadow-xl rounded-3xl p-5 transition-all">
-                    <div class="flex items-center justify-between mb-2"><span class="font-mono text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">AGENTE PRODUTO</span><span class="text-green-600 text-sm font-bold">▲ Evolução</span></div>
-                    <p class="text-sm text-gray-700 mt-1"><strong>Avanço:</strong> arquitetura + padrão HL7/FHIR. <br> <strong class="text-red-500">Crítica:</strong> sem evidência UX final. Dashboard B2B backend puro.</p>
-                    <div class="mt-3 bg-gray-50 p-3 rounded-xl text-xs text-gray-600 border-l-2 border-blue-500">🔧 Recomendação: priorizar interface médica — retenção exige usabilidade clínica.</div>
-                </div>
-                <!-- Agente Mercado -->
-                <div class="bg-white shadow-xl rounded-3xl p-5">
-                    <div class="flex items-center justify-between mb-2"><span class="font-mono text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">AGENTE MERCADO</span><span class="text-red-500 text-sm font-bold">⚠️ Crítico</span></div>
-                    <p class="text-sm text-gray-700"><strong>ICP definido:</strong> Clínicas. <strong class="text-red-600">Zero clientes pagantes.</strong> Estratégia baseada em contatos pessoais do fundador.</p>
-                    <div class="mt-3 bg-gray-50 p-3 rounded-xl text-xs text-gray-600 border-l-2 border-red-400">🎯 Recomendação: PoC paga em até 30 dias para validar proposta de valor.</div>
-                </div>
-                <!-- Agente Finanças -->
-                <div class="bg-white shadow-xl rounded-3xl p-5">
-                    <div class="flex items-center justify-between mb-2"><span class="font-mono text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">AGENTE FINANÇAS</span><span class="text-yellow-600 text-sm font-bold">Risco societário</span></div>
-                    <p class="text-sm text-gray-700">Reconhecimento do risco, mas plano edital desequilibrado: muito TI, pouco comercial. Margem SaaS não projetada.</p>
-                    <div class="mt-3 bg-gray-50 p-3 rounded-xl text-xs text-gray-600 border-l-2 border-amber-500">📊 Recomendação: projetar custo de infraestrutura por nova clínica.</div>
-                </div>
-                <!-- Agente Pessoas -->
-                <div class="bg-white shadow-xl rounded-3xl p-5">
-                    <div class="flex items-center justify-between mb-2"><span class="font-mono text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">AGENTE PESSOAS</span><span class="text-green-600 text-sm">CTO integrado</span></div>
-                    <p class="text-sm text-gray-700">Braulio trouxe pragmatismo técnico. Time pesado em doutores e leve em vendedores. CEO único vendedor = gargalo.</p>
-                    <div class="mt-3 bg-gray-50 p-3 rounded-xl text-xs text-gray-600 border-l-2 border-blue-500">👥 Recomendação: contratar/definir responsável Inside Sales 100%.</div>
-                </div>
-                <!-- Agente Operações -->
-                <div class="bg-white shadow-xl rounded-3xl p-5">
-                    <div class="flex items-center justify-between mb-2"><span class="font-mono text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">AGENTE OPERAÇÕES</span><span class="text-red-500 text-sm">PI pendente</span></div>
-                    <p class="text-sm text-gray-700">Migração servidores web com capacidade multi-clínicas, mas registro de Propriedade Intelectual não comprovado.</p>
-                    <div class="mt-3 bg-gray-50 p-3 rounded-xl text-xs text-gray-600 border-l-2 border-red-400">⚖️ Recomendação: formalizar INPI imediatamente — compliance edital FAPDF.</div>
-                </div>
-                <!-- Agente Prestação de Contas -->
-                <div class="bg-white shadow-xl rounded-3xl p-5">
-                    <div class="flex items-center justify-between mb-2"><span class="font-mono text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">PRESTAÇÃO DE CONTAS</span><span class="text-red-500 font-bold">Meta 1 e 2 🔴</span></div>
-                    <p class="text-sm text-gray-700">Meta 4 (aperfeiçoamento) único progresso real. Meta 2 (Receita) e Meta 1 (Usuários) vermelho total. Atraso comercial.</p>
-                    <div class="mt-3 bg-gray-50 p-3 rounded-xl text-xs text-gray-600">📆 Recomendação: documentar cronograma para aditivo FAPDF.</div>
-                </div>
+            <!-- Gráfico de alocação de recursos / risco financeiro (doughnut) -->
+            <div class="bg-white rounded-3xl shadow-xl p-6 card-hover">
+                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">💰 Alocação de Recursos (Edital FAPDF)</h3>
+                <p class="text-sm text-gray-500 mb-4">Desequilíbrio crítico: pesado em TI, pouco comercial</p>
+                <canvas id="resourceChart" width="300" height="300" style="max-width:80%; margin:0 auto; display:block;"></canvas>
+                <div class="mt-4 bg-red-50 p-3 rounded-xl text-sm text-red-700 border-l-4 border-red-500">⚠️ Alerta: plano de aplicação sem margem de vendas — inviabiliza Meta 2 (receita)</div>
             </div>
         </div>
 
-        <!-- GRÁFICO Chart.js: Comparação de maturidade e métricas críticas -->
-        <div class="bg-white shadow-2xl rounded-3xl p-6 md:p-8 mb-16 border border-gray-100">
-            <h3 class="text-xl font-bold text-slate-800 mb-1">📈 Painel de Avanço Estratégico (S01 → S02)</h3>
-            <p class="text-gray-500 text-sm mb-6">Evolução comparativa em indicadores-chave de gestão — base análise CEO</p>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <canvas id="radarChartMaturity" width="400" height="400" style="max-width:100%; height:auto;"></canvas>
-                    <p class="text-center text-xs text-gray-500 mt-2">↑ Quanto maior, melhor performance (escala 1-10)</p>
+        <!-- LINHA 2: PAINEL DOS AGENTES (classificação dinâmica: colunas 1 progresso, 2 riscos, 3 pendências) -->
+        <div class="mb-16">
+            <div class="flex items-center justify-between mb-5">
+                <h2 class="text-2xl font-black text-slate-800">🎯 Análise por Agentes Estratégicos</h2>
+                <div class="h-1 w-24 bg-blue-600 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-7">
+                <!-- COLUNA 1: METAS & AVANÇOS (Produto, Mercado, Tecnologia) -->
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-3 text-white font-bold text-center">🚀 Metas & Avanços</div>
+                    <div class="bg-white p-4 space-y-5">
+                        <!-- Agente Produto -->
+                        <div class="border-b border-gray-100 pb-4">
+                            <div class="flex justify-between items-center"><span class="font-extrabold text-blue-800">AGENTE PRODUTO</span><span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Evolução estrutural</span></div>
+                            <p class="text-sm text-gray-600 mt-1"><span class="font-semibold">✅ Avanço:</span> arquitetura FHIR/HL7, saída do foco Android.</p>
+                            <p class="text-sm text-gray-600"><span class="font-semibold text-red-500">⚠️ Crítica:</span> Dashboard B2B em backend, sem UX validada.</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">🎯 Recomendação:</span> priorizar interface médica — retenção depende de usabilidade.</div>
+                        </div>
+                        <!-- Agente Mercado -->
+                        <div class="border-b border-gray-100 pb-4">
+                            <div class="flex justify-between items-center"><span class="font-extrabold text-blue-800">AGENTE MERCADO</span><span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">ICP definido</span></div>
+                            <p class="text-sm text-gray-600"><span class="font-semibold">✅ Avanço:</span> ICP = Clínicas, redução CAC teórica.</p>
+                            <p class="text-sm text-gray-600"><span class="font-semibold text-red-500">⚠️ Crítica:</span> Zero clientes pagantes, estratégia não escalável.</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">🎯 Recomendação:</span> PoC paga em 30 dias.</div>
+                        </div>
+                        <!-- Agente Tecnologia (implícito no relatório) - com base no avanço TRL vamos agrupar aqui -->
+                        <div>
+                            <div class="flex justify-between items-center"><span class="font-extrabold text-blue-800">AGENTE TECNOLOGIA</span><span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">TRL evoluído</span></div>
+                            <p class="text-sm text-gray-600"><span class="font-semibold">✅ Avanço:</span> servidores web multi-clínicas + interoperabilidade HL7.</p>
+                            <p class="text-sm text-gray-600"><span class="font-semibold text-red-500">⚠️ Atenção:</span> Registro de PI pendente (INPI).</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">🎯 Recomendação:</span> formalizar propriedade intelectual imediatamente.</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex flex-col justify-center">
-                    <div class="mb-5">
-                        <div class="flex justify-between text-sm font-semibold"><span>📊 Maturidade Comercial</span><span class="text-blue-600">+30%</span></div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-blue-600 h-2.5 rounded-full" style="width: 24%"></div></div>
-                        <div class="flex justify-between text-xs text-gray-500 mt-1"><span>S01: 12%</span><span>S02: 24% (definição, sem execução)</span></div>
+
+                <!-- COLUNA 2: RISCOS & ATENÇÃO (Finanças, Operações, Compliance) -->
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <div class="bg-gradient-to-r from-red-600 to-rose-600 p-3 text-white font-bold text-center">⚠️ Riscos & Atenção</div>
+                    <div class="bg-white p-4 space-y-5">
+                        <!-- Agente Finanças -->
+                        <div class="border-b border-gray-100 pb-4">
+                            <div class="flex justify-between"><span class="font-extrabold text-red-700">AGENTE FINANÇAS</span><span class="text-xs bg-red-100 text-red-700 px-2 rounded-full">Risco societário</span></div>
+                            <p class="text-sm text-gray-600 mt-1"><span class="font-semibold">🔴 Crítica:</span> plano edital desequilibrado (pouco comercial). Margem SaaS não projetada.</p>
+                            <p class="text-sm text-gray-600"><span class="font-semibold">✅ Avanço:</span> reconhecimento do risco Cap Table.</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">⚠️ Recomendação:</span> projetar custo/infra por clínica para validar margem.</div>
+                        </div>
+                        <!-- Agente Operações -->
+                        <div class="border-b border-gray-100 pb-4">
+                            <div class="flex justify-between"><span class="font-extrabold text-red-700">AGENTE OPERAÇÕES</span><span class="text-xs bg-red-100 text-red-700 px-2 rounded-full">PI pendente</span></div>
+                            <p class="text-sm text-gray-600"><span class="font-semibold">🔴 Riscos:</span> registro INPI não comprovado → risco legal edital.</p>
+                            <p class="text-sm text-gray-600"><span class="font-semibold">✅ Avanço:</span> Migração servidores preparada para escala.</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">⚠️ Recomendação:</span> formalizar INPI urgentemente.</div>
+                        </div>
+                        <!-- Compliance + Cap Table adicional -->
+                        <div>
+                            <div class="flex justify-between"><span class="font-extrabold text-red-700">RISCO SOCIETÁRIO</span><span class="text-xs bg-red-100 text-red-700 rounded-full">Uninvestable</span></div>
+                            <p class="text-sm text-gray-600">Participação de 14% da Raja Ventures bloqueia Meta 5 (Investimento externo).</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">⚖️ Ação:</span> renegociar cap table até S03.</div>
+                        </div>
                     </div>
-                    <div class="mb-5">
-                        <div class="flex justify-between text-sm font-semibold"><span>⚙️ Maturidade Tecnológica (TRL+FHIR)</span><span class="text-green-600">+40%</span></div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-green-500 h-2.5 rounded-full" style="width: 68%"></div></div>
-                        <div class="flex justify-between text-xs"><span>S01: TRL 5</span><span>S02: TRL 6 + interoperabilidade</span></div>
+                </div>
+
+                <!-- COLUNA 3: PENDÊNCIAS & ADEQUAÇÕES (Pessoas, Jurídico / Prestação de Contas, Processos) -->
+                <div class="rounded-2xl overflow-hidden shadow-lg">
+                    <div class="bg-gradient-to-r from-amber-600 to-orange-600 p-3 text-white font-bold text-center">📌 Pendências & Adequações</div>
+                    <div class="bg-white p-4 space-y-5">
+                        <!-- Agente Pessoas -->
+                        <div class="border-b border-gray-100 pb-4">
+                            <div class="flex justify-between"><span class="font-extrabold text-amber-800">AGENTE PESSOAS</span><span class="text-xs bg-amber-100 text-amber-800 rounded-full">Gargalo operacional</span></div>
+                            <p class="text-sm text-gray-600"><span class="font-semibold">✅ Avanço:</span> CTO Braulio integrado, pragmatismo técnico.</p>
+                            <p class="text-sm text-gray-600"><span class="font-semibold">🔴 Crítica:</span> time pesado em doutores, leve em vendedores. CEO único vendedor.</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">📌 Recomendação:</span> definir responsável Inside Sales 100%.</div>
+                        </div>
+                        <!-- Agente Prestação de Contas (parcial) + adequação edital -->
+                        <div>
+                            <div class="flex justify-between"><span class="font-extrabold text-amber-800">PRESTAÇÃO DE CONTAS</span><span class="text-xs bg-amber-100 text-amber-800 rounded-full">Metas 1 e 2 🔴</span></div>
+                            <p class="text-sm text-gray-600">Meta 4 (Aperfeiçoamento) única em andamento. Meta 2 (receita) e Meta 1 (usuários) vermelho total.</p>
+                            <div class="mt-2 text-xs bg-gray-50 p-2 rounded-lg"><span class="font-bold">📄 Recomendação:</span> documentar fases para aditivo de prazo FAPDF.</div>
+                        </div>
                     </div>
-                    <div class="mb-5">
-                        <div class="flex justify-between text-sm font-semibold"><span>🧠 Governança & Time</span><span class="text-blue-600">+35%</span></div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-1"><div class="bg-indigo-500 h-2.5 rounded-full" style="width: 70%"></div></div>
-                        <div class="flex justify-between text-xs"><span>Centralizada</span><span>Coordenada com CTO (estruturada)</span></div>
+                </div>
+            </div>
+            <!-- SÍNTESE CEO (após os agentes) -->
+            <div class="mt-10 bg-slate-800 rounded-3xl p-6 text-white shadow-2xl">
+                <div class="flex items-start gap-3 flex-wrap">
+                    <span class="text-4xl">🎙️</span>
+                    <div>
+                        <span class="text-blue-300 text-sm uppercase tracking-wider">Síntese CEO · Visão Integrada</span>
+                        <p class="text-xl font-bold mt-1 leading-tight">"Angatu está parando de brincar de academia e começando a jogar o jogo das startups."</p>
+                        <p class="text-gray-300 text-base mt-2">Maior avanço: jurídico-estratégico (Cap Table + pivot B2B). Porém execução comercial nula. Motor potente, carro parado na garagem.</p>
+                        <div class="flex flex-wrap gap-3 mt-4">
+                            <div class="bg-blue-900/40 rounded-full px-3 py-1 text-sm">▲ Maturidade Tecnológica: +30%</div>
+                            <div class="bg-emerald-900/40 rounded-full px-3 py-1 text-sm">▲ Gestão: +45%</div>
+                            <div class="bg-amber-800/50 rounded-full px-3 py-1 text-sm">● Comercial: definido mas 0 clientes</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Diagrama de pivotagem B2C → B2B (uso HTML + setas) -->
-        <div class="bg-slate-900 text-white rounded-3xl shadow-xl p-8 mb-16">
+        <!-- LINHA 2.5 : PRESTAÇÃO DE CONTAS & ADERÊNCIA EDITAL (OBRIGATÓRIO pois existe agente prestação de contas) -->
+        <div class="mb-16">
+            <div class="bg-gradient-to-r from-indigo-900 to-purple-900 rounded-3xl shadow-xl overflow-hidden">
+                <div class="p-6 border-b border-indigo-700/50 flex flex-wrap justify-between items-center gap-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">📋</span>
+                        <h3 class="text-xl font-bold text-white">Agente Prestação de Contas</h3>
+                        <span class="bg-purple-500/30 text-purple-100 text-xs px-3 py-1 rounded-full">Edital FAPDF · Subvenção Econômica</span>
+                    </div>
+                    <span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full animate-pulse">🔴 Prazo crítico: Meta 1 e 2 atrasadas</span>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+                        <!-- Metas em andamento -->
+                        <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="font-bold text-white text-sm mb-2">📌 Metas em Andamento</div>
+                            <ul class="text-sm space-y-1 text-gray-200">
+                                <li>⏳ Meta 4 (Aperfeiçoamento) — progresso real</li>
+                                <li>🔴 Meta 1 (Usuários) — vermelho / atraso</li>
+                                <li>🔴 Meta 2 (Receita) — vermelho, zero faturamento B2B</li>
+                                <li>⚖️ Meta 5 (Investimento externo) — bloqueada por cap table</li>
+                            </ul>
+                        </div>
+                        <!-- Riscos de Cumprimento -->
+                        <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="font-bold text-white text-sm mb-2">❗ Riscos de Cumprimento</div>
+                            <ul class="text-sm space-y-1 text-gray-200">
+                                <li>❗ Atraso no lançamento comercial da plataforma B2B</li>
+                                <li>❗ Dashboard clínico ainda em nível backend</li>
+                                <li>❗ Nenhuma clínica onboarded → indicadores zerados</li>
+                                <li>❗ Possibilidade de glosa ou necessidade de aditivo FAPDF</li>
+                            </ul>
+                        </div>
+                        <!-- Avanços vs Sessão Anterior -->
+                        <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="font-bold text-white text-sm mb-2">▲ Avanços vs Sessão 01</div>
+                            <ul class="text-sm space-y-1 text-gray-200">
+                                <li>▲ Reconhecimento crítico do atraso comercial</li>
+                                <li>▲ Estruturação de requisitos para aditivo de prazo</li>
+                                <li>▲ Definição do ICP Clínicas e abandono B2C disperso</li>
+                            </ul>
+                        </div>
+                        <!-- Ações Recomendadas -->
+                        <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                            <div class="font-bold text-white text-sm mb-2">📋 Ações Recomendadas</div>
+                            <ul class="text-sm space-y-1 text-gray-200">
+                                <li>📄 Documentar cada fase do desenvolvimento técnico</li>
+                                <li>🔐 Justificar cronograma à FAPDF para aditivo de prazo</li>
+                                <li>📂 Demonstrar entregas parciais (arquitetura HL7, servidores)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Tema Crítico Destacado -->
+                    <div class="mt-6 bg-indigo-950/60 rounded-xl p-4 border border-indigo-500/30">
+                        <div class="flex flex-wrap justify-between items-center gap-2">
+                            <span class="text-indigo-200 font-bold">🎯 TEMA CRÍTICO:</span>
+                            <span class="bg-amber-500/20 text-amber-200 text-xs px-3 py-1 rounded-full">Subvenção em risco: atraso na receita</span>
+                        </div>
+                        <p class="text-white text-sm mt-2">Meta 2 (Receita) e Meta 1 (Usuários) em sinal vermelho. Sem lançamento comercial do B2B, os indicadores do edital ficam inviáveis. Recomenda-se aditamento de prazo com documentação robusta.</p>
+                    </div>
+                    <div class="mt-4 bg-gray-800/60 rounded-xl p-3 text-gray-300 text-sm italic">
+                        “Documentar cada fase do desenvolvimento para justificar o cronograma junto à FAPDF, caso precise de aditivo de prazo.”
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LINHA 3: PIVOT ESTRATÉGICO (antes/depois com setas unicode) -->
+        <div class="bg-slate-900 text-white rounded-3xl p-8 mb-16 shadow-2xl">
             <div class="text-center mb-6">
-                <span class="bg-blue-500/20 text-blue-200 px-4 py-1 rounded-full text-sm">PIVOT ESTRATÉGICO: MODELO DE NEGÓCIO</span>
-                <h3 class="text-2xl font-bold mt-3">De B2C Disperso → Foco em Clínicas (B2B)</h3>
+                <span class="bg-blue-500/30 text-blue-200 px-4 py-1 rounded-full text-sm">PIVOT ESTRATÉGICO</span>
+                <h3 class="text-2xl font-bold mt-2">De B2C Disperso → Foco em Clínicas (B2B)</h3>
             </div>
-            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
                 <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center w-56 border border-white/20">
-                    <div class="text-3xl mb-2">📱❌</div>
-                    <div class="font-bold">Modelo anterior</div>
-                    <div class="text-xs text-blue-200">B2C disperso · CAC alto</div>
+                    <div class="text-4xl mb-2">📱❌</div>
+                    <div class="font-bold">Antes (S01)</div>
+                    <div class="text-xs text-blue-200">B2C disperso · CAC alto · sem foco</div>
                 </div>
-                <div class="text-3xl font-mono unicode-arrow">→→→</div>
-                <div class="bg-blue-600/30 border border-blue-400 rounded-2xl p-6 text-center w-56 shadow-lg">
-                    <div class="text-3xl mb-2">🏥📊</div>
-                    <div class="font-bold text-white">Novo ICP Clinicas</div>
-                    <div class="text-xs text-blue-100">CAC reduzido · SaaS B2B</div>
+                <div class="text-4xl font-mono unicode-arrow">➡️</div>
+                <div class="bg-blue-600/30 border-2 border-blue-400 rounded-2xl p-6 text-center w-64 shadow-lg">
+                    <div class="text-4xl mb-2">🏥📊</div>
+                    <div class="font-bold text-white">ICP Clínicas (B2B)</div>
+                    <div class="text-xs text-blue-100">Redução do CAC · Modelo SaaS</div>
                 </div>
-                <div class="text-3xl font-mono unicode-arrow">⚡ exigência</div>
+                <div class="text-3xl font-mono unicode-arrow">⚡ exige</div>
                 <div class="bg-amber-500/20 border border-amber-400 rounded-2xl p-5 text-center w-64">
                     <div class="font-semibold text-amber-200">Dashboard robusto</div>
-                    <div class="text-xs">Nível backend atualmente → ação prioridade S03</div>
+                    <div class="text-xs">Nível backend ainda — ação obrigatória S03</div>
                 </div>
             </div>
-            <div class="mt-8 text-center text-amber-300 text-sm bg-black/30 rounded-xl p-3">⚠️ Alerta: sem dashboard funcional → retenção zero e falha no onboarding de clínicas.</div>
+            <div class="mt-7 text-center text-amber-300 text-sm bg-black/30 rounded-xl p-3">⚠️ Alerta: sem dashboard funcional, o pivot B2B falha na retenção e aquisição de clínicas.</div>
         </div>
 
-        <!-- Fluxo de pivotagem de Cap Table (HTML+ setas) -->
-        <div class="bg-white rounded-3xl shadow-xl p-7 mb-16 border border-gray-200">
-            <h3 class="font-bold text-xl flex items-center gap-2 text-slate-800">⚖️ Reestruturação societária (Cap Table) - Desbloqueio Meta 5</h3>
-            <div class="flex flex-col md:flex-row justify-between items-stretch gap-4 mt-6">
-                <div class="flex-1 bg-red-50 p-4 rounded-2xl border-l-4 border-red-500">
-                    <div class="font-bold text-red-700">Situação S02</div>
-                    <div class="text-sm">Raja Ventures com 14% → impedimento investimento externo. Empresa "uninvestable".</div>
-                </div>
-                <div class="flex items-center justify-center text-2xl text-gray-400">⟶</div>
-                <div class="flex-1 bg-amber-50 p-4 rounded-2xl border-l-4 border-amber-500">
-                    <div class="font-bold text-amber-700">Negociação em curso</div>
-                    <div class="text-sm">Reconhecimento jurídico-estratégico; minuta de renegociação para S03.</div>
-                </div>
-                <div class="flex items-center justify-center text-2xl text-gray-400">⟶</div>
-                <div class="flex-1 bg-green-50 p-4 rounded-2xl border-l-4 border-green-500">
-                    <div class="font-bold text-green-700">Objetivo Meta 5</div>
-                    <div class="text-sm">Clean cap table viabilizando rodada de investimento externo.</div>
-                </div>
+        <!-- LINHA 4: CARDS PLANO DE AÇÃO (3 PRIORIDADES) + PERGUNTA ESTRATÉGICA -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white rounded-3xl shadow-xl p-6 border-t-8 border-blue-600 card-hover">
+                <div class="text-blue-700 text-3xl mb-2">⚖️</div>
+                <h4 class="font-black text-xl text-slate-800">1. Ação Jurídica</h4>
+                <p class="text-gray-600 text-sm mt-1">Apresentar minuta ou status da renegociação com <strong>Raja Ventures</strong> (14% cap table).</p>
+                <div class="mt-3 text-xs text-blue-600 bg-blue-50 p-2 rounded-xl">Meta: desbloquear investimento externo (Meta 5).</div>
+            </div>
+            <div class="bg-white rounded-3xl shadow-xl p-6 border-t-8 border-indigo-600 card-hover">
+                <div class="text-indigo-700 text-3xl mb-2">🖥️</div>
+                <h4 class="font-black text-xl text-slate-800">2. Entrega Técnica</h4>
+                <p class="text-gray-600 text-sm mt-1">Demonstração visual do <strong>Dashboard funcional</strong> para Clínicas (mínimo viável).</p>
+                <div class="mt-3 text-xs text-indigo-600 bg-indigo-50 p-2 rounded-xl">Critério: UI médica operacional.</div>
+            </div>
+            <div class="bg-white rounded-3xl shadow-xl p-6 border-t-8 border-green-600 card-hover">
+                <div class="text-green-700 text-3xl mb-2">🤝</div>
+                <h4 class="font-black text-xl text-slate-800">3. Validação Comercial</h4>
+                <p class="text-gray-600 text-sm mt-1">Assinatura de pelo menos <strong>1 Termo de Parceria/PoC</strong> com clínica para teste real.</p>
+                <div class="mt-3 text-xs text-green-600 bg-green-50 p-2 rounded-xl">Prazo: 30 dias, prova de conceito paga.</div>
             </div>
         </div>
-
-        <!-- SÍNTESE CEO e plano de ação com gráfico de alerta (Chart.js doughnut) -->
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="md:col-span-2 bg-slate-800 rounded-3xl shadow-2xl p-7 text-white">
-                <span class="text-blue-300 uppercase text-xs tracking-wider">SÍNTESE CEO · Visão integrada</span>
-                <p class="text-xl font-semibold mt-2 leading-tight">"A Angatu está parando de brincar de academia e começando a jogar o jogo das startups"</p>
-                <p class="text-gray-300 text-sm mt-3">O avanço mais significativo foi jurídico-estratégico: reconhecimento do Cap Table problemático e pivot B2B. Porém execução comercial nula. Motor potente, mas carro não saiu da garagem.</p>
-                <div class="mt-5 flex flex-wrap gap-3 text-sm">
-                    <div class="bg-blue-900/50 rounded-full px-3 py-1">✅ TRL evoluiu para 6</div>
-                    <div class="bg-amber-800/50 rounded-full px-3 py-1">⚠️ Zero clientes pagantes</div>
-                    <div class="bg-red-800/50 rounded-full px-3 py-1">🔴 Metas 1 e 2 vermelhas</div>
-                </div>
-            </div>
-            <div class="bg-white shadow-xl rounded-3xl p-5 flex flex-col items-center justify-center">
-                <h4 class="font-bold text-slate-700 text-center">Distribuição de Atenção (Edital)</h4>
-                <canvas id="doughnutRecursos" width="200" height="200" style="max-width:180px; margin: 0 auto;"></canvas>
-                <p class="text-xs text-center text-gray-500 mt-3">Plano desequilibrado: Pesado em TI, pouco comercial.</p>
-            </div>
-        </div>
-
-        <!-- Plano de ação Sessão 03 prioridades máximas -->
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-7 shadow-xl border border-blue-200">
-            <div class="flex flex-wrap justify-between items-start gap-4">
+        <!-- Pergunta estratégica -->
+        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-7 shadow-lg border border-blue-200">
+            <div class="flex flex-col md:flex-row gap-4 items-start">
+                <span class="text-5xl">❓</span>
                 <div>
-                    <h3 class="text-2xl font-black text-blue-900">🎯 Plano de Ação — Sessão 03</h3>
-                    <p class="text-slate-600 max-w-lg">Máximo 3 prioridades para destravar execução e compliance</p>
-                </div>
-                <div class="bg-white rounded-full px-4 py-2 text-sm font-mono shadow-md">deadline: 30 dias</div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-5 mt-6">
-                <div class="bg-white rounded-2xl p-5 shadow-md border-t-4 border-blue-600">
-                    <div class="text-blue-700 font-bold text-lg">1. Ação Jurídica</div>
-                    <p class="text-sm">Apresentar minuta / status da renegociação com a <strong>Raja Ventures</strong> (clean cap table).</p>
-                    <div class="mt-3 text-xs text-gray-500">Meta: desbloquear due diligence</div>
-                </div>
-                <div class="bg-white rounded-2xl p-5 shadow-md border-t-4 border-indigo-600">
-                    <div class="text-indigo-700 font-bold text-lg">2. Entrega Técnica</div>
-                    <p class="text-sm">Demonstração visual do <strong>Dashboard funcional</strong> para clínicas (mínimo MVP usável).</p>
-                    <div class="mt-3 text-xs text-gray-500">UI médica + métricas operacionais</div>
-                </div>
-                <div class="bg-white rounded-2xl p-5 shadow-md border-t-4 border-green-600">
-                    <div class="text-green-700 font-bold text-lg">3. Validação Comercial</div>
-                    <p class="text-sm">Assinatura de pelo menos <strong>1 Termo de Parceria/PoC </strong>com clínica para teste de dados real.</p>
-                    <div class="mt-3 text-xs text-gray-500">Prova de conceito paga ou carta-intenção</div>
-                </div>
-            </div>
-            <div class="mt-8 bg-blue-900/10 p-4 rounded-2xl border border-blue-200">
-                <div class="flex items-start gap-3">
-                    <span class="text-blue-800 text-2xl">❓</span>
-                    <div>
-                        <span class="font-bold text-blue-900">Pergunta Estratégica do CEO</span>
-                        <p class="text-slate-700 text-sm italic">"Qual é o impedimento técnico ou comercial real que nos impede de colocar o dashboard nas mãos de um médico para teste amanhã de manhã?"</p>
-                    </div>
+                    <p class="text-slate-700 font-mono text-sm uppercase tracking-wide">Pergunta Estratégica (CEO)</p>
+                    <p class="text-xl font-bold text-slate-800 italic">"Qual é o impedimento técnico ou comercial real que nos impede de colocar o dashboard nas mãos de um médico para teste amanhã de manhã?"</p>
                 </div>
             </div>
         </div>
 
-        <!-- rodapé com status metas FAPDF -->
-        <footer class="mt-20 pt-6 border-t border-gray-200 text-center text-gray-500 text-xs">
-            <p>Relatório consolidado da Sessão 02 - Angatu. Dados extraídos conforme análise crítica do CEO. Metas Edital FAPDF em acompanhamento: Meta 4 (aperfeiçoamento) em andamento, Meta 1 (usuários) e Meta 2 (receita) em sinal vermelho. Recomendação: aditivo de prazo.</p>
+        <footer class="mt-16 text-center text-gray-500 text-xs border-t border-gray-200 pt-6">
+            <p>Relatório consolidado Sessão 02 - Angatu. Dados extraídos conforme análise crítica do CEO e Agentes. Metas FAPDF: Meta 4 em progresso, Meta 1 e 2 em sinal vermelho. Recomendação: aditivo de prazo e ação jurídica de cap table.</p>
         </footer>
     </main>
 
     <script>
-        (function() {
-            // gráfico radar - comparativo S01 vs S02 em 5 dimensões
-            const ctxRadar = document.getElementById('radarChartMaturity').getContext('2d');
-            new Chart(ctxRadar, {
-                type: 'radar',
-                data: {
-                    labels: ['Maturidade Tecnológica', 'Execução Comercial', 'Governança', 'Produto (UX/Dashboard)', 'Alinhamento Edital'],
-                    datasets: [
-                        {
-                            label: 'Sessão 01 (Abr/2026)',
-                            data: [45, 12, 28, 20, 30],
-                            backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                            borderColor: '#1e3a8a',
-                            borderWidth: 2,
-                            pointBackgroundColor: '#2563eb',
-                            pointBorderColor: '#fff'
-                        },
-                        {
-                            label: 'Sessão 02 (Abr/2026)',
-                            data: [68, 24, 62, 35, 48],
-                            backgroundColor: 'rgba(16, 185, 129, 0.2)',
-                            borderColor: '#10b981',
-                            borderWidth: 2,
-                            pointBackgroundColor: '#059669',
-                            pointBorderColor: '#fff'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                title: function(tooltipItems) {
-                                    let label = tooltipItems[0].label;
-                                    // break labels long (nenhum label > 16 chars aqui, mas safe)
-                                    if (label && label.length > 16) {
-                                        return label.split(' ');
-                                    }
-                                    return label;
-                                }
-                            }
-                        },
-                        legend: { position: 'top' }
+        // GRÁFICO 1: EVOLUÇÃO TRL (barras: TRL inicial S01 vs S02)
+        const ctxBar = document.getElementById('trlChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Maturidade Tecnológica (TRL)'],
+                datasets: [
+                    {
+                        label: 'Sessão 01 (05/04/2026)',
+                        data: [5],
+                        backgroundColor: '#94a3b8',
+                        borderRadius: 12,
+                        barPercentage: 0.6
                     },
-                    scales: {
-                        r: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: { stepSize: 20, backdropColor: 'transparent' }
-                        }
+                    {
+                        label: 'Sessão 02 (22/04/2026)',
+                        data: [6],
+                        backgroundColor: '#2563eb',
+                        borderRadius: 12,
+                        barPercentage: 0.6
                     }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: { y: { min: 0, max: 9, title: { display: true, text: 'Nível TRL (1-9)' } } },
+                plugins: {
+                    tooltip: { callbacks: { title: (ctx) => 'Nível TRL' } },
+                    legend: { position: 'top' }
                 }
-            });
+            }
+        });
 
-            // gráfico Doughnut: alocação de recursos edital (TI vs Comercial vs Outros)
-            const ctxDoughnut = document.getElementById('doughnutRecursos').getContext('2d');
-            new Chart(ctxDoughnut, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Desenvolvimento TI (Infra/FHIR/Dashboard)', 'Área Comercial & Vendas', 'Operações & Compliance'],
-                    datasets: [{
-                        data: [72, 13, 15],
-                        backgroundColor: ['#2563eb', '#ef4444', '#f59e0b'],
-                        borderWidth: 0,
-                        hoverOffset: 6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    cutout: '65%',
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.label || '';
-                                    let value = context.raw;
-                                    let total = context.dataset.data.reduce((a,b)=>a+b,0);
-                                    let percent = Math.round((value/total)*100);
-                                    return `${label}: ${percent}% (orçamento desequilibrado)`;
-                                }
+        // GRÁFICO 2: ALOCAÇÃO DE RECURSOS (doughnut - desequilíbrio TI vs Comercial)
+        const ctxDoughnut = document.getElementById('resourceChart').getContext('2d');
+        new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: {
+                labels: ['Desenvolvimento/Infra TI (FHIR/HL7/Dashboard)', 'Área Comercial & Vendas', 'Operações & Compliance (INPI)'],
+                datasets: [{
+                    data: [72, 13, 15],
+                    backgroundColor: ['#2563eb', '#ef4444', '#f59e0b'],
+                    borderWidth: 0,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                cutout: '65%',
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label.length > 20) label = label.substring(0, 18) + '...';
+                                let value = context.raw;
+                                let total = context.dataset.data.reduce((a,b)=>a+b,0);
+                                let percent = Math.round((value/total)*100);
+                                return `${label}: ${percent}% (orçamento desequilibrado)`;
                             }
-                        },
-                        legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } }
-                    }
+                        }
+                    },
+                    legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } }
                 }
-            });
-        })();
+            }
+        });
     </script>
-
-    <!-- pequeno ajuste para labels gráfico radar não há longas, mas configurado tooltip multi-line  -->
 </body>
 </html>
