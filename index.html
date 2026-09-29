@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Relatório de Sessão 03 — Angatu</title>
+<title>Relatório de Sessão 04 — Angatu</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','system-ui','sans-serif']}}}};</script>
 </head>
 <body class="bg-[#f8fafc] text-[#0f172a] font-sans antialiased">
@@ -16,16 +16,17 @@
   <header class="mb-8">
     <div class="flex flex-wrap items-center gap-2 mb-2">
       <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#2563eb] text-white">Angatu</span>
-      <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700">TRL 5 → 6 · fonte: Perfil-empresa / Relatório S02</span>
+      <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700">TRL 5 → 6 · fonte: Perfil-empresa (sem nova medição na S04)</span>
       <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700">Nível de Risco: Crítico</span>
     </div>
-    <h1 class="text-3xl md:text-4xl font-extrabold">Relatório de Sessão 03 — 03/08/2026</h1>
-    <p class="text-slate-500 mt-2">Angatu (sócios Cláudio e Braulio Gottschalg-Duque) · Mentor: Stenio Diniz · Fontes: transcrição da sessão + relatório S02</p>
+    <h1 class="text-3xl md:text-4xl font-extrabold">Relatório de Sessão 04 — 29/09/2026</h1>
+    <p class="text-slate-500 mt-2">Angatu (Cláudio Gottschalg-Duque, CEO · Braulio, CTO) · Mentor: Stenio Diniz · Fontes: transcrição da sessão + relatório S03 + Perfil-empresa</p>
     <div class="mt-4 flex flex-wrap items-center gap-1 text-xs">
       <span class="text-slate-500 uppercase tracking-wide">Reuniões:</span>
       <span class="px-2 py-1 rounded bg-slate-200 text-slate-600">05/04</span><span class="text-slate-400">→</span>
-      <span class="px-2 py-1 rounded bg-slate-200 text-slate-600">22/06</span><span class="text-slate-400">→</span>
-      <span class="px-2 py-1 rounded bg-[#2563eb] text-white font-bold">03/08</span>
+      <span class="px-2 py-1 rounded bg-slate-200 text-slate-600">22/04</span><span class="text-slate-400">→</span>
+      <span class="px-2 py-1 rounded bg-slate-200 text-slate-600">03/08</span><span class="text-slate-400">→</span>
+      <span class="px-2 py-1 rounded bg-[#2563eb] text-white font-bold">29/09</span>
     </div>
   </header>
 
@@ -33,7 +34,7 @@
   <section class="grid md:grid-cols-2 gap-6 mb-8">
     <div class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100">
       <h3 class="font-bold mb-1">Evolução TRL</h3>
-      <p class="text-xs text-slate-400 mb-3">TRL 5 → 6 (não há clientes pagantes) · fonte: Perfil-empresa + Relatório S02</p>
+      <p class="text-xs text-slate-400 mb-3">Faixa 5–6 mantida · sem nova medição na Sessão 04 · fonte: Perfil-empresa</p>
       <div class="relative" style="height:230px"><canvas id="chartTrl"></canvas></div>
     </div>
     <div class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100">
@@ -50,36 +51,36 @@
       <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100">
         <div class="bg-gradient-to-r from-emerald-500 to-emerald-600 p-4 text-white"><p class="font-bold text-sm">COLUNA 1 · METAS &amp; AVANÇOS</p></div>
         <div class="bg-white p-5 space-y-4">
-          <div><p class="font-bold text-emerald-700">🎯 Agente Produto</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Validação ativa</span><p class="text-sm text-slate-600 mt-1">B2C com +60 usuários; B2B em baseline; nova persona cuidador no produto.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> definir proposta de valor e lançar a landing page p/ cuidadores.</p></div>
-          <div><p class="font-bold text-emerald-700">🎯 Agente Mercado</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Direção nova</span><p class="text-sm text-slate-600 mt-1">Pivot p/ cuidadores autônomos; reunião dia 07; segmento sem ferramentas.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> mapear mercado de cuidadores e prospectar associações/cooperativas.</p></div>
+          <div><p class="font-bold text-emerald-700">🎯 Agente Produto</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">Distribuição completa</span><p class="text-sm text-slate-600 mt-1">Apps na Apple Store e Google Play; dashboard v3 em uso real; manual v1; CID/HL7 em desenvolvimento. LP de cuidadores (S03) não citada.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> analisar o uso da POC no dashboard (ativação, retenção, abandono).</p></div>
+          <div><p class="font-bold text-emerald-700">🎯 Agente Mercado</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">POC em uso real</span><p class="text-sm text-slate-600 mt-1">Escola de enfermagem (BH) há ~2 meses, 45 usuários; clínica de fisioterapia em negociação; prefeitura MG em abertura (mentor: cautela).</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> converter a clínica de fisioterapia no primeiro cliente pagante.</p></div>
         </div>
       </div>
       <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100">
         <div class="bg-gradient-to-r from-red-500 to-red-600 p-4 text-white"><p class="font-bold text-sm">COLUNA 2 · RISCOS &amp; ATENÇÃO</p></div>
         <div class="bg-white p-5 space-y-4">
-          <div><p class="font-bold text-red-700">⚠️ Agente Finanças</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-red-100 text-red-700">Cap table bloqueia</span><p class="text-sm text-slate-600 mt-1">14% Raja impede captação; Meta 2 (receita) travada; cautela custos fixos.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> contraproposta 14%→1–3% e evitar custos fixos (BH) sem receita.</p></div>
-          <div><p class="font-bold text-red-700">⚠️ Agente Operações</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">PI e evidências</span><p class="text-sm text-slate-600 mt-1">LGPD 100% criptografia (avanço); PI vinculada à UnB (50%); ER a exportar.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> exportar ER (evidência) e documentar PI.</p></div>
+          <div><p class="font-bold text-red-700">⚠️ Agente Finanças</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-red-100 text-red-700">Cap table estagnada</span><p class="text-sm text-slate-600 mt-1">14% Raja não tratada na S04 (Meta 5 travada); zero receita; WhatsApp com reprecificação em outubro.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> trazer status da renegociação com a Raja e o custo da vendedora BH.</p></div>
+          <div><p class="font-bold text-red-700">⚠️ Agente Operações</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">Registro travado</span><p class="text-sm text-slate-600 mt-1">Dashboard v3 + manual + personas (avanço); registro de software no CDT/INB travado há 4 reuniões; análise de uso inexistente.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> destravar o registro no CDP e instituir painel de uso semanal.</p></div>
         </div>
       </div>
       <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100">
         <div class="bg-gradient-to-r from-orange-500 to-purple-600 p-4 text-white"><p class="font-bold text-sm">COLUNA 3 · PENDÊNCIAS &amp; ADEQUAÇÕES</p></div>
         <div class="bg-white p-5 space-y-4">
-          <div><p class="font-bold text-purple-700">📌 Agente Pessoas</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-orange-100 text-orange-700">Gargalo comercial</span><p class="text-sm text-slate-600 mt-1">Mário (vendas) sem entregar; sócios assumiram vendas; time leve em vendedores.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> definir responsável de aquisição e testar se o cuidador simplifica a venda.</p></div>
-          <div><p class="font-bold text-purple-700">📌 Agente Prestação de Contas</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-700">Sensibilidade a glosa</span><p class="text-sm text-slate-600 mt-1">Metas 1 (usuários) e 2 (receita) em vermelho; estratégia de LP p/ trazer usuário.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> provar esforço (LP/blog/tráfego) e apresentar mercado de cuidadores.</p></div>
+          <div><p class="font-bold text-purple-700">📌 Agente Pessoas</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-orange-100 text-orange-700">Sem dono comercial</span><p class="text-sm text-slate-600 mt-1">Braulio operacional em BH; time sem dedicação exclusiva; vendedora BH só em negociação.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> definir quem responde por desenvolvimento de mercado (interno ou externo, com metas).</p></div>
+          <div><p class="font-bold text-purple-700">📌 Agente Prestação de Contas</p><span class="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-purple-100 text-purple-700">Sensibilidade a glosa</span><p class="text-sm text-slate-600 mt-1">Metas 1 e 4 com prazo vencido; Meta 2 sem cliente pagante; prestação parcial tranquila.</p><p class="text-xs mt-1"><span class="font-semibold">Recomendação:</span> documentar a POC como evidência (45 usuários, ~2 meses) para a próxima prestação de contas.</p></div>
         </div>
       </div>
     </div>
     <div class="bg-[#0f172a] text-white rounded-3xl p-6 shadow-xl mt-5">
       <h3 class="text-lg font-bold mb-2">Síntese CEO — indicadores (qualitativos)</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-3">
-        <div><p class="text-xs text-slate-400">Produto</p><span class="text-sm font-semibold text-emerald-400">Avanço (B2C ativo)</span></div>
-        <div><p class="text-xs text-slate-400">Mercado</p><span class="text-sm font-semibold text-emerald-400">Avanço de direção</span></div>
-        <div><p class="text-xs text-slate-400">Finanças</p><span class="text-sm font-semibold text-red-400">Atenção (cap table)</span></div>
-        <div><p class="text-xs text-slate-400">Pessoas</p><span class="text-sm font-semibold text-amber-400">Gargalo comercial</span></div>
-        <div><p class="text-xs text-slate-400">Operações</p><span class="text-sm font-semibold text-emerald-400">Avanço técnico (LGPD)</span></div>
-        <div><p class="text-xs text-slate-400">Prestação de Contas</p><span class="text-sm font-semibold text-red-400">Metas 1/2 em vermelho</span></div>
+        <div><p class="text-xs text-slate-400">Produto</p><span class="text-sm font-semibold text-emerald-400">Avanço (duas lojas + POC)</span></div>
+        <div><p class="text-xs text-slate-400">Mercado</p><span class="text-sm font-semibold text-amber-400">Avanço sem receita</span></div>
+        <div><p class="text-xs text-slate-400">Finanças</p><span class="text-sm font-semibold text-red-400">Estagnada (cap table)</span></div>
+        <div><p class="text-xs text-slate-400">Pessoas</p><span class="text-sm font-semibold text-amber-400">Parcial (sem dono comercial)</span></div>
+        <div><p class="text-xs text-slate-400">Operações</p><span class="text-sm font-semibold text-amber-400">Avanço técnico (registro travado)</span></div>
+        <div><p class="text-xs text-slate-400">Prestação de Contas</p><span class="text-sm font-semibold text-red-400">Metas 1/4 vencidas</span></div>
       </div>
-      <p class="text-sm text-slate-300 mt-4 leading-relaxed">Pivot para a persona <strong>cuidador autônomo</strong> como porta de entrada mais rápida (gerar usuário/dados e atender as metas). Avanço técnico real = conformidade LGPD. Bloqueios: <em>cap table (14% Raja)</em> e <em>execução comercial nula</em>. Decisão: <strong>zero esforço na prefeitura</strong>; foco em trazer o usuário via landing page (evidência contra glosa).</p>
+      <p class="text-sm text-slate-300 mt-4 leading-relaxed">O avanço desta sessão é <strong>operacional e de posicionamento</strong>, não comercial: apps nas duas lojas, POC com 45 usuários há ~2 meses e discurso corrigido (fim do "prontuário/PEP" → integrado ao SUS). Persiste <strong>zero cliente pagante</strong>; cap table (14% Raja) não tratada; landing page de cuidadores (S03) sem retorno; 2 meses de dados <strong>sem análise</strong>. O mentor conduziu a sessão para um ponto único: <strong>focar</strong> (uma clínica, um escopo estável, proposta de valor por persona) e não dispersar o time pequeno em ciclo de venda público.</p>
     </div>
   </section>
 
@@ -88,17 +89,17 @@
     <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100">
       <div class="bg-gradient-to-r from-purple-700 to-indigo-600 p-5 text-white">
         <p class="text-sm font-bold">AGENTE PRESTAÇÃO DE CONTAS</p>
-        <div class="flex flex-wrap gap-2 mt-2"><span class="text-xs px-2 py-1 rounded-full bg-white/20">Edital StartBSB · FAPDF</span><span class="text-xs px-2 py-1 rounded-full bg-white/20">Fase 3 · R$ 150 mil</span></div>
+        <div class="flex flex-wrap gap-2 mt-2"><span class="text-xs px-2 py-1 rounded-full bg-white/20">Edital 102025 · FAPDF</span><span class="text-xs px-2 py-1 rounded-full bg-white/20">Prestação parcial: tranquila</span><span class="text-xs px-2 py-1 rounded-full bg-white/20">🔴 Prazos vencidos: Metas 1 e 4</span></div>
       </div>
       <div class="bg-white p-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">✓ Metas em Andamento</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>⏳ Meta 4 (Aperfeiçoamento) — avanço</li><li>⏳ Meta 1 (Usuários) — via LP/60+ usuários</li></ul></div>
-          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">❗ Riscos de Cumprimento</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>Meta 2 (Receita) travada — sem cliente</li><li>Risco de glosa em metas 1/2</li></ul></div>
-          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">▲ Avanços vs Sessão Anterior</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>Pivot de mercado (p/ cuidadores)</li><li>Conformidade LGPD (criptografia)</li></ul></div>
-          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">📄 Ações Recomendadas</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>📄 Publicar LP + blog/LinkedIn (evidência)</li><li>📂 Dimensionar mercado de cuidadores</li></ul></div>
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">⏳ Metas em Andamento</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>❗ Meta 1 (25 mil usuários) — prazo 01/06/2026 vencido</li><li>❗ Meta 4 (Aperfeiçoamento) — prazo 30/07/2026 vencido</li><li>⏳ Meta 3 (HIMSS/hospitais) — prazo 31/12/2026</li><li>⏳ Meta 2 (ARR) · Meta 5 (investimento) — travadas</li></ul></div>
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">❗ Riscos de Cumprimento</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>Glosa nas Metas 1 e 4 (prazos vencidos)</li><li>Zero cliente pagante (Meta 2)</li><li>Cap table 14% Raja não tratada (Meta 5)</li></ul></div>
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">▲ Avanços vs Sessão Anterior</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>POC em uso real há ~2 meses (45 usuários)</li><li>iOS + Android publicados; manual v1</li><li>Prestação de contas parcial tranquila</li></ul></div>
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="font-bold text-sm mb-2">📄 Ações Recomendadas</p><ul class="text-xs text-slate-600 space-y-1 list-disc pl-4"><li>📄 Documentar evidências de uso (painel, manual, vídeo)</li><li>📋 Provar esforço nas Metas 1 e 4</li><li>🔐 Converter tester em cliente pagante</li></ul></div>
         </div>
-        <div class="mt-4 bg-[#1e1b4b] text-white rounded-2xl p-4"><p class="text-xs uppercase tracking-wide text-indigo-300">Tema crítico</p><p class="text-sm mt-1">Sem cliente pagante e com metas de usuários/receita em vermelho — o esforço precisa ser provado para evitar glosa; a priorização muda do governo para a persona cuidador.</p></div>
-        <p class="text-sm italic text-slate-500 mt-3 bg-slate-100 p-3 rounded-2xl">Recomendação final: publicar material de captação (LP + tráfego orgânico) como evidência de execução e apresentar o dimensionamento do mercado de cuidadores na próxima sessão.</p>
+        <div class="mt-4 bg-[#1e1b4b] text-white rounded-2xl p-4"><p class="text-xs uppercase tracking-wide text-indigo-300">Tema crítico</p><p class="text-sm mt-1">Metas 1 e 4 com prazo vencido sem cliente pagante e sem uso documentado — é preciso transformar os 2 meses de POC (45 usuários, 23 pacientes, 21 consultas, 38 exames) em evidência escrita para a próxima prestação de contas do Edital 102025.</p></div>
+        <p class="text-sm italic text-slate-500 mt-3 bg-slate-100 p-3 rounded-2xl">Recomendação final: documentar a POC como evidência das Metas 1 e 4 (prova de esforço) e converter a clínica de fisioterapia em contrato pago antes do encerramento do ciclo.</p>
       </div>
     </div>
   </section>
@@ -107,31 +108,75 @@
   <section class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 mb-8">
     <h2 class="text-xl font-bold mb-4">Pivot Estratégico</h2>
     <div class="grid md:grid-cols-3 items-center gap-3 text-center">
-      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="text-xs uppercase text-slate-400">Antes</p><p class="font-bold mt-1">Governo / clínicas B2B</p><p class="text-xs text-slate-500">prefeituras, hospitais, ciclo longo</p></div>
+      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100"><p class="text-xs uppercase text-slate-400">Antes</p><p class="font-bold mt-1">"Prontuário/PEP" + custo-benefício</p><p class="text-xs text-slate-500">pitch confundido com CRM/PEP; competição por preço</p></div>
       <div class="text-3xl font-bold text-[#2563eb]">➜</div>
-      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p class="text-xs uppercase text-slate-400">Depois</p><p class="font-bold text-[#2563eb] mt-1">Cuidador autônomo</p><p class="text-xs text-slate-500">landing page + dados; entrada ágil</p></div>
+      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200"><p class="text-xs uppercase text-slate-400">Depois</p><p class="font-bold text-[#2563eb] mt-1">Integrado ao SUS + proposta de valor</p><p class="text-xs text-slate-500">interop CID/HL7; valor por persona (60+, cuidador, clínica)</p></div>
     </div>
-    <div class="mt-5 flex items-center gap-3"><span class="px-2 py-1 rounded-full bg-slate-200 text-slate-600 text-xs">prefeitura</span><span class="text-slate-400">➜ banho-maria (esforço zero)</span></div>
+    <div class="mt-5 flex flex-wrap items-center gap-3"><span class="px-2 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">dispersão (prefeitura + mercado)</span><span class="text-slate-400">➜ foco:</span><span class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">1 clínica × 1 escopo estável × 1 pessoa dedicada</span></div>
+  </section>
+
+  <!-- Linha 3.5: Plano de Avanço & Pontos Não Resolvidos -->
+  <section class="bg-white rounded-3xl p-6 shadow-xl border border-slate-100 mb-8">
+    <h2 class="text-xl font-bold mb-4">Plano de Avanço &amp; Pontos Não Resolvidos</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="bg-emerald-50 rounded-2xl p-4 border border-emerald-100">
+        <p class="text-xs font-bold uppercase text-emerald-600 mb-2">▲ Avanço (S03 → S04)</p>
+        <ul class="text-sm text-slate-700 space-y-2 list-disc pl-4">
+          <li>Distribuição completa: Apple Store + Google Play (iOS resolvido após 6 submissões)</li>
+          <li>POC com a escola de enfermagem de BH em uso há ~2 meses (45 usuários no painel)</li>
+          <li>Discurso corrigido: fim do "prontuário/PEP" → integrado ao SUS (CID/HL7 em desenvolvimento)</li>
+          <li>Dashboard em 3ª versão de interface + manual do usuário (1ª versão)</li>
+        </ul>
+      </div>
+      <div class="bg-red-50 rounded-2xl p-4 border border-red-100">
+        <p class="text-xs font-bold uppercase text-red-600 mb-2">✖ Não resolvidos</p>
+        <ul class="text-sm text-slate-700 space-y-2 list-disc pl-4">
+          <li>Cap table 14% Raja — não tratada na S04 (Meta 5 bloqueada)</li>
+          <li>Landing page de cuidadores (ação da S03) — sem retorno</li>
+          <li>Zero cliente pagante (Meta 2); dados da POC em 2 meses sem análise</li>
+          <li>Registro de software no CDT/INB travado (4 reuniões) · PI/UnB pendente</li>
+          <li>Responsável por desenvolvimento de mercado indefinido</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- Linha 4: Plano de Ação + Pergunta -->
   <section class="mb-8">
     <h2 class="text-xl font-bold mb-4">Plano de Ação para a Próxima Sessão</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-white rounded-3xl p-5 shadow-xl border border-slate-100"><span class="px-2 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">Prioridade 0</span><p class="font-bold mt-3">Publicar landing page de cuidadores</p><p class="text-sm text-slate-600 mt-1">Proposta de valor + chatbot (LGPD), tráfego orgânico (blog/LinkedIn).</p></div>
-      <div class="bg-white rounded-3xl p-5 shadow-xl border border-slate-100"><span class="px-2 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">Médio prazo</span><p class="font-bold mt-3">Mapear mercado de cuidadores</p><p class="text-sm text-slate-600 mt-1">Tamanho + modelo cooperativa/autônomo; associações/cooperativas p/ divulgação.</p></div>
-      <div class="bg-white rounded-3xl p-5 shadow-xl border border-slate-100"><span class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">Estabilização</span><p class="font-bold mt-3">Renegociar cap table + evidências LGPD</p><p class="text-sm text-slate-600 mt-1">14% → 1–3% (Raja); exportar ER (conformidade) — desbloqueia Meta 5.</p></div>
+      <div class="bg-white rounded-3xl p-5 shadow-xl border border-slate-100"><span class="px-2 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">Prioridade 0</span><p class="font-bold mt-3">Analisar o uso da POC</p><p class="text-sm text-slate-600 mt-1">Extrair do dashboard ativação, abandono de telas, funcionalidades mais usadas e retenção dos 45 usuários (~2 meses) em 1 página.</p></div>
+      <div class="bg-white rounded-3xl p-5 shadow-xl border border-slate-100"><span class="px-2 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">Médio prazo</span><p class="font-bold mt-3">Proposta de valor + 1º cliente pagante</p><p class="text-sm text-slate-600 mt-1">Escrever o valor por persona (60+, cuidador, clínica) e fechar a clínica de fisioterapia com escopo estável e preço com desconto.</p></div>
+      <div class="bg-white rounded-3xl p-5 shadow-xl border border-slate-100"><span class="px-2 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">Estabilização</span><p class="font-bold mt-3">Decidir o foco + destravar o CDT</p><p class="text-sm text-slate-600 mt-1">Clínica/escola × prefeitura (CPSI/edital, bolsistas, Cefete) e regularizar o registro de software (4 reuniões paradas) — sem dispersão.</p></div>
     </div>
-    <div class="bg-[#0f172a] text-white rounded-3xl p-6 shadow-xl mt-5"><p class="text-xs uppercase text-slate-400">Pergunta estratégica</p><p class="font-semibold text-lg mt-2">"Qual o tamanho do mercado de cuidadores autônomos e em que estrutura (cooperativa/associação/MEI) eles se organizam — e isso confirma a persona cuidador como a porta de entrada mais rápida para gerar usuários e atender às metas do edital?"</p></div>
+    <div class="bg-[#0f172a] text-white rounded-3xl p-6 shadow-xl mt-5"><p class="text-xs uppercase text-slate-400">Pergunta estratégica</p><p class="font-semibold text-lg mt-2">"Qual é a proposta de valor — em uma frase por persona (usuário 60+, cuidador, clínica) — que justifica o pagamento da clínica hoje, e qual evidência de uso dos 2 meses de POC (ativação, retenção, abandono) vocês apresentam para provar que esse valor está sendo entregue?"</p></div>
   </section>
 
-  <footer class="text-xs text-slate-400 text-center pt-4 border-t border-slate-200">Gerado a partir do vault Obsidian · <span class="italic">Relatorio Sessao 03 Angatu</span> · Prompt Design para Mentoria · 28/08/2026</footer>
+  <footer class="text-xs text-slate-400 text-center pt-4 border-t border-slate-200">Gerado a partir do vault Obsidian · <span class="italic">Relatorio Sessao 04 Angatu</span> · Prompt Design para Mentoria · 29/09/2026</footer>
 </div>
 
 <script>
 const PALETA={ azul:'#2563eb', vermelho:'#ef4444', verde:'#10b981', amber:'#f59e0b', slate:'#64748b' };
-new Chart(document.getElementById('chartTrl'),{ type:'bar', data:{ labels:['TRL inicial','TRL atual'], datasets:[{ label:'TRL', data:[5,6], backgroundColor:[PALETA.slate,PALETA.azul] }] }, options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ beginAtZero:true, max:9, ticks:{ callback:(v)=>'TRL '+v } } }, plugins:{ legend:{ display:false } } } });
-new Chart(document.getElementById('chartMetas'),{ type:'bar', data:{ labels:['M1 Usuários','M2 Receita','M4 Aperf.','M5 Invest.'], datasets:[{ data:[0,0,2,1], backgroundColor:['#ef4444','#ef4444','#10b981','#f59e0b'] }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ max:2, ticks:{ display:false } } } } });
+new Chart(document.getElementById('chartTrl'),{
+  type:'bar',
+  data:{ labels:['TRL declarado (início)','TRL real (S01–S04)'],
+    datasets:[{ label:'TRL', data:[9,6], backgroundColor:[PALETA.slate,PALETA.azul] }]},
+  options:{ responsive:true, maintainAspectRatio:false,
+    scales:{ y:{ beginAtZero:true, max:9, ticks:{ callback:(v)=>'TRL '+v } } },
+    plugins:{ legend:{ display:false },
+      tooltip:{ callbacks:{ title:(items)=>items.map(i=>i.label) } } } }
+});
+new Chart(document.getElementById('chartMetas'),{
+  type:'bar',
+  data:{ labels:['M1 Usuários','M2 Receita','M3 Hospitais','M4 Aperf.','M5 Invest.'],
+    datasets:[{ data:[0,0,1,1,0],
+      backgroundColor:['#ef4444','#ef4444','#f59e0b','#f59e0b','#ef4444'] }]},
+  options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{ display:false },
+      tooltip:{ callbacks:{ title:(items)=>items.map(i=>i.label),
+        label:(c)=>['Status qualitativo: '+(c.raw===0?'crítico':c.raw===1?'atenção':'avanço demonstrado')] } } },
+    scales:{ x:{ max:2, ticks:{ stepSize:1, display:true } } } }
+});
 </script>
 </body>
 </html>
